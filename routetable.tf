@@ -1,7 +1,7 @@
 resource "aws_route_table" "PublicRouteTable" {
   vpc_id = "${aws_vpc.mainvpc.id}"
   route {
-      cidr = "0.0.0.0/0"
+      cidr_block = "0.0.0.0/0"
       gateway_id = "${aws_internet_gateway.gw.id}"
   }
   tags = {
@@ -20,7 +20,7 @@ resource "aws_route_table_association" "public_route_table_assoc" {
 resource "aws_route_table" "PrivateRouteTable" {
   vpc_id = "${aws_vpc.mainvpc.id}"
   route {
-      cidr = "0.0.0.0/0"
+      cidr_block = "0.0.0.0/0"
       gateway_id = "${aws_nat_gateway.NATGW.id}"
   }
   tags = {
