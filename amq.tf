@@ -2,8 +2,8 @@ resource "aws_mq_broker" "benchmarktest" {
   broker_name = "TET-KIRAN-TERAMQ"
 
   configuration {
-    id       = "${aws_mq_configuration.test.id}"
-    revision = "${aws_mq_configuration.test.latest_revision}"
+    id       = "${aws_mq_configuration.benchmarktest.id}"
+    revision = "${aws_mq_configuration.benchmarktest.latest_revision}"
   }
   deployment_mode    = "SINGLE_INSTANCE"
   engine_type        = "ActiveMQ"
