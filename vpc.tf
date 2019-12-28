@@ -46,3 +46,12 @@ resource "aws_eip" "EIP" {
   
 }
 
+resource "aws_nat_gateway" "NATGW" {
+    allocation_id = "{aws_eip.EIP.id}"
+    subnet_id = "${aws_subnet.PublicSubnet_A.id}"
+    tags = {
+        Name = "TET-KIRAN-TERA-NATGW"
+    }
+    depends_on = ["aws_eip.EIP","aws_subnet.PublicSubnet_A"]  
+}
+
